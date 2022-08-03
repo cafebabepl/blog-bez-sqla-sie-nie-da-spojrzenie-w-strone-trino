@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  cassandra:
+    image: docker.io/bitnami/cassandra:4.0
+    ports:
+      - "9042:9042"
+    environment:
+      - CASSANDRA_USER=cassandra
+      - CASSANDRA_PASSWORD=cassandra
+      - CASSANDRA_ENABLE_USER_DEFINED_FUNCTIONS=true
+    volumes:
+      - ./LD2011_2014-T.csv:/opt/cafebabepl/LD2011_2014-T.csv
+      - ./cassandra/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+
+  trino:
+    image: trinodb/trino
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./trino/etc/trino:/etc/trino

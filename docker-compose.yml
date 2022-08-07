@@ -10,7 +10,7 @@ services:
       - CASSANDRA_PASSWORD=cassandra
       - CASSANDRA_ENABLE_USER_DEFINED_FUNCTIONS=true
     volumes:
-      - ./LD2011_2014-T.csv:/opt/cafebabepl/LD2011_2014-T.csv
+      - ./LD2011_2014-T.tar.gz:/opt/cafebabepl/LD2011_2014-T.tar.gz
       - ./cassandra/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
 
   trino:

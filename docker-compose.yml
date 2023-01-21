@@ -13,6 +13,13 @@ services:
       - ./LD2011_2014-T.tar.gz:/opt/cafebabepl/LD2011_2014-T.tar.gz
       - ./cassandra/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
 
+  mongodb:
+    image: bitnami/mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongodb/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+
   trino:
     image: trinodb/trino
     ports:

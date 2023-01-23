@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mongoimport --db='eld' --collection='mt' --file='/docker-entrypoint-initdb.d/mt.jsonl'
+mongoimport --db='eld' --collection='clients' --file='/docker-entrypoint-initdb.d/mt.jsonl'
